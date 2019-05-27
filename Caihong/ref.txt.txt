@@ -1,0 +1,16 @@
+https://mertarauh.com/2017/01/18/dont-trust-the-internet-and-how-to-add-an-inductive-proximity-sensor-to-your-3d-printer-the-proper-and-easiest-way/
+
+https://3dprint.wiki/reprap/anet/a8/improvement/autobedleveling
+
+https://www.thingiverse.com/thing:1911146
+
+https://www.instructables.com/id/Enable-Auto-Leveling-for-your-3D-Printer-Marlin-Fi/
+
+http://www.pronterface.com/
+
+https://core3d.tech/2017/09/13/proximity-sensor-detection-lj12a3-4-z-bx-vs-lj12a3-4-zby-wiring/
+
+https://www.instructables.com/id/Using-Repetier-Host-to-Set-Up-Your-Auto-Leveling-P/
+
+http://www.print3dforum.com/showthread.php/488-HOW-TO-Set-up-your-Auto-Levelling-Bed
+
