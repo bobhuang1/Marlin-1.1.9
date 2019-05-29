@@ -289,6 +289,18 @@ void lcd_printPGM_utf(const char *str, uint8_t n=LCD_WIDTH) {
         constexpr u8g_uint_t right = left + CUSTOM_BOOTSCREEN_BMPWIDTH,
                              bottom = top + CUSTOM_BOOTSCREEN_BMPHEIGHT;
       #endif
+
+    constexpr uint8_t offy =
+      #if ENABLED(START_BMPHIGH)
+        (LCD_PIXEL_HEIGHT - (START_BMPHEIGHT)) / 2
+      #else
+        DOG_CHAR_HEIGHT
+      #endif
+    ;
+
+    const uint8_t width = u8g.getWidth(), height = u8g.getHeight(),
+                  offx = (width - (START_BMPWIDTH)) / 2;
+      
       u8g.firstPage();
       do {
         u8g.drawBitmapP(
@@ -304,15 +316,32 @@ void lcd_printPGM_utf(const char *str, uint8_t n=LCD_WIDTH) {
         #endif
       } while (u8g.nextPage());
       safe_delay(CUSTOM_BOOTSCREEN_TIMEOUT);
+
+
+    u8g.firstPage();
+    do {
+      lcd_setFont(FONT_MENU);
+      #ifndef STRING_SPLASH_LINE2
+        const uint8_t txt1X = width - (sizeof(STRING_SPLASH_LINE1) - 1) * (DOG_CHAR_WIDTH);
+        u8g.drawStr(txt1X, (height + DOG_CHAR_HEIGHT) / 2 - 20, STRING_SPLASH_LINE1);
+      #else
+        const uint8_t txt1X = (width - (sizeof(STRING_SPLASH_LINE1) - 1) * (DOG_CHAR_WIDTH)) / 2,
+                      txt2X = (width - (sizeof(STRING_SPLASH_LINE2) - 1) * (DOG_CHAR_WIDTH)) / 2;
+        u8g.drawStr(txt1X, height - (DOG_CHAR_HEIGHT) * 3 / 2 - 20, STRING_SPLASH_LINE1);
+        u8g.drawStr(txt2X, height - (DOG_CHAR_HEIGHT) * 1 / 2 - 20, STRING_SPLASH_LINE2);
+      #endif
+      } while (u8g.nextPage());
+      safe_delay(CUSTOM_BOOTSCREEN_TIMEOUT);
     }
 
   #endif // SHOW_CUSTOM_BOOTSCREEN
 
   void lcd_bootscreen() {
+
     #if ENABLED(SHOW_CUSTOM_BOOTSCREEN)
       lcd_custom_bootscreen();
     #endif
-
+/*
     constexpr uint8_t offy =
       #if ENABLED(START_BMPHIGH)
         (LCD_PIXEL_HEIGHT - (START_BMPHEIGHT)) / 2
@@ -339,6 +368,7 @@ void lcd_printPGM_utf(const char *str, uint8_t n=LCD_WIDTH) {
       #endif
     } while (u8g.nextPage());
     safe_delay(BOOTSCREEN_TIMEOUT);
+*/    
   }
 
 #endif // SHOW_BOOTSCREEN
