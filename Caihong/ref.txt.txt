@@ -14,3 +14,45 @@ https://www.instructables.com/id/Using-Repetier-Host-to-Set-Up-Your-Auto-Levelin
 
 http://www.print3dforum.com/showthread.php/488-HOW-TO-Set-up-your-Auto-Levelling-Bed
 
+
+M111 S247
+G28 ; Home extruder
+G29
+
+
+Z_MIN_PROBE_REPEATABILITY_TEST
+M48 P10 X100 Y100
+
+
+Measuring your heat bed flatness
+With the 
+G29 T P10 V4
+ your printer will scan your heatbed in a 10¡Á10 point matrix.
+
+
+
+With a firmware based on Marlin 1.1.x the procedure is a bit different as the behaviour of G92 in pre 1.1.x versions was buggy:
+
+Heat your printer up to your printing temperature and allow a few minutes for it to expand and settle
+Reset the existing Z-offset to zero
+M851 Z0
+Home all axes
+G28
+Move the nozzle to the middle of the bed
+G1 X100 Y100
+(if your bed is 220 x 220)
+
+Turn off the software endstops with
+M211 S0
+Move the nozzle down so it is just gripping a piece of standard printer paper
+Set the Z-offset to the displayed value. E.g. if the printer displays a Z-Value of -1.23 enter
+M851 Z-1.23
+Store it to the EEPROM
+M500
+Important notice! Enable the endstops again with
+M211 S1
+or the printer head will collide with the bed on the next
+
+G28
+command
+
