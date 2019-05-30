@@ -56,3 +56,15 @@ or the printer head will collide with the bed on the next
 G28
 command
 
+
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT {79.512,79.614,2566.88,760}
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,2560,93}
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT { 100,100,400,95 }
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT { 100,100,400,95 }
+
+DEFAULT_AXIS_STEPS_PER_UNIT { 100.125, 100.125, 400.125, 106.6 }
+
