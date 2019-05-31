@@ -57,6 +57,15 @@ G28
 command
 
 
+M302         ; report current cold extrusion state
+M302 P0      ; enable cold extrusion checking
+M302 P1      ; disable cold extrusion checking
+M302 S0      ; always allow extrusion (disable checking)
+M302 S170    ; only allow extrusion above 170
+M302 S170 P1 ; set min extrude temp to 170 but leave disabled
+
+
+
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT {79.512,79.614,2566.88,760}
 
@@ -66,5 +75,14 @@ command
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT { 100,100,400,95 }
 
-DEFAULT_AXIS_STEPS_PER_UNIT { 100.125, 100.125, 400.125, 106.6 }
+DEFAULT_AXIS_STEPS_PER_UNIT { 97.56, 97.56, 400, 100.5 }
+
+Get the current steps-per-unit settings with M503.
+
+With EEPROM_SETTINGS enabled:
+
+This setting for all axes is saved with M500 and loaded with M501.
+M502 resets steps-per-unit for all axes to the values from DEFAULT_AXIS_STEPS_PER_UNIT.
+
+
 
