@@ -77,12 +77,21 @@ M302 S170 P1 ; set min extrude temp to 170 but leave disabled
 
 DEFAULT_AXIS_STEPS_PER_UNIT { 97.56, 97.56, 400, 100.5 }
 
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT { 100, 100, 402.030457, 103.0927835 }
+
+200*16/3.14/10.95mm = 93.06925 pulses
+
+
 Get the current steps-per-unit settings with M503.
 
 With EEPROM_SETTINGS enabled:
 
 This setting for all axes is saved with M500 and loaded with M501.
+M501 displays everything too!!!!
 M502 resets steps-per-unit for all axes to the values from DEFAULT_AXIS_STEPS_PER_UNIT.
+M503 displays everything
+
 
 
 
