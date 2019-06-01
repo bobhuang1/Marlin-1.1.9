@@ -93,5 +93,12 @@ M502 resets steps-per-unit for all axes to the values from DEFAULT_AXIS_STEPS_PE
 M503 displays everything
 
 
+M413 S1 
+Disable power-loss recovery
+M413 S0 
+Report power-loss recovery state
+M413
+Power-loss recovery ON
+ 
 
 
