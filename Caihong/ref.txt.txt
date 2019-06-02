@@ -104,3 +104,36 @@ Power-loss recovery ON
 Filament runout sensor
 https://aus3d.com.au/filament-sensor
 
+
+
+PID autotune
+M303 [E<index>] S<temp> U1
+M303 E-1 S60 U1
+M303 E0 S195 U1
+
+Parameters
+C<count>	
+Cycles. At least 3 cycles are required. Default 5.
+
+[E<index>]	
+Hotend index (-1 for heated bed). Default 0.
+
+S<temp>	
+Target temperature
+
+U<flag>	
+Use PID result. (Otherwise just print it out.)
+
+M303 E0 S195 U1
+16:40:36.290 : PID Autotune finished! Put the last Kp, Ki and Kd constants from below into Configuration.h
+16:40:36.290 : #define DEFAULT_Kp 17.46
+16:40:36.290 : #define DEFAULT_Ki 1.25
+16:40:36.290 : #define DEFAULT_Kd 61.15
+M301 P17.46 I1.25 D61.15
+
+16:56:45.354 : PID Autotune finished! Put the last Kp, Ki and Kd constants from below into Configuration.h
+16:56:45.354 : #define DEFAULT_bedKp 120.21
+16:56:45.354 : #define DEFAULT_bedKi 2.49
+16:56:45.354 : #define DEFAULT_bedKd 1450.07
+M304 P120.21 I2.49 D1450.07
+
