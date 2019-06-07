@@ -133,8 +133,8 @@ M301 P17.46 I1.25 D61.15
 
 M303 E-1 S70 U1
 16:56:45.354 : PID Autotune finished! Put the last Kp, Ki and Kd constants from below into Configuration.h
-16:56:45.354 : #define DEFAULT_bedKp 120.21
-16:56:45.354 : #define DEFAULT_bedKi 2.49
-16:56:45.354 : #define DEFAULT_bedKd 1450.07
-M304 P120.21 I2.49 D1450.07
+#define DEFAULT_bedKp 188.24
+#define DEFAULT_bedKi 16.65
+#define DEFAULT_bedKd 532.00
+M304 P188.24 I16.65 D532.00
 
