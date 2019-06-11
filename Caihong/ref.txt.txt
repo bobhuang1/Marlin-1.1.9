@@ -137,3 +137,13 @@ M301 P17.46 I1.25 D61.15
 16:56:45.354 : #define DEFAULT_bedKd 1450.07
 M304 P120.21 I2.49 D1450.07
 
+24V ramps
+http://www.mythoughtspot.com/2017/09/18/modify-ramps-for-24-volts/
+https://www.instructables.com/id/Upgrading-Your-RAMPS-With-High-Power-Components/
+1. Diode
+2. MOSFET w/heatsink
+3. Fuses
+4. DC-DC Converter
+
+TMC2208
+https://www.instructables.com/id/UART-This-Serial-Control-of-Stepper-Motors-With-th/
