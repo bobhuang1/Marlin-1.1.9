@@ -231,7 +231,7 @@
  *
  * :{ 0:'No power switch', 1:'ATX', 2:'X-Box 360' }
  */
-#define POWER_SUPPLY 0
+#define POWER_SUPPLY 1
 
 #if POWER_SUPPLY > 0
   // Enable this option to leave the PSU off at startup.
@@ -429,9 +429,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 120.21
-  #define DEFAULT_bedKi 2.49
-  #define DEFAULT_bedKd 1450.07
+  #define DEFAULT_bedKp 188.24
+  #define DEFAULT_bedKi 16.65
+  #define DEFAULT_bedKd 532.00
 
   //#define DEFAULT_bedKp 10.00
   //#define DEFAULT_bedKi .023
@@ -794,12 +794,12 @@
 
 // TODO here!!!!!!!
  
-#define X_PROBE_OFFSET_FROM_EXTRUDER 36  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -48  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -2.75   // Z offset: -below +above  [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -15  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -3.80   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 4
+#define MIN_PROBE_EDGE 0
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -1044,10 +1044,10 @@
 
 // TODO
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION 36 // 0+36
-  #define RIGHT_PROBE_BED_POSITION 191 // 155+36
-  #define FRONT_PROBE_BED_POSITION 14 // 45-48
-  #define BACK_PROBE_BED_POSITION 152 // 200-48
+  #define LEFT_PROBE_BED_POSITION 0
+  #define RIGHT_PROBE_BED_POSITION 175
+  #define FRONT_PROBE_BED_POSITION 10
+  #define BACK_PROBE_BED_POSITION 180
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST

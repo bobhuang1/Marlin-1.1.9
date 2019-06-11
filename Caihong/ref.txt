@@ -131,11 +131,29 @@ M303 E0 S195 U1
 16:40:36.290 : #define DEFAULT_Kd 61.15
 M301 P17.46 I1.25 D61.15
 
+M303 E-1 S70 U1
 16:56:45.354 : PID Autotune finished! Put the last Kp, Ki and Kd constants from below into Configuration.h
-16:56:45.354 : #define DEFAULT_bedKp 120.21
-16:56:45.354 : #define DEFAULT_bedKi 2.49
-16:56:45.354 : #define DEFAULT_bedKd 1450.07
-M304 P120.21 I2.49 D1450.07
+#define DEFAULT_bedKp 188.24
+#define DEFAULT_bedKi 16.65
+#define DEFAULT_bedKd 532.00
+M304 P188.24 I16.65 D532.00
+
+
+DIY reprap full graphics controller with ST7920
+
+http://julesgilson.com/index.php/2017/07/02/fixing-lcd-corruption-on-prusa-i3-mk2-clone-with-ramps-arduino/
+
+in EXP1
+
+should be :
+pin 5 > 17
+instead you have
+pin 5 > 23 which is wrong
+Actually it¡¯s pin 3 > 17 and not pin 5
+
+#define ST7920_DELAY_1 DELAY_1_NOP
+#define ST7920_DELAY_2 DELAY_2_NOP
+#define ST7920_DELAY_3 DELAY_1_NOP
 
 24V ramps
 http://www.mythoughtspot.com/2017/09/18/modify-ramps-for-24-volts/
