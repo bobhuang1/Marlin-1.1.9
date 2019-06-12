@@ -1,4 +1,4 @@
-https://mertarauh.com/2017/01/18/dont-trust-the-internet-and-how-to-add-an-inductive-proximity-sensor-to-your-3d-printer-the-proper-and-easiest-way/
+﻿https://mertarauh.com/2017/01/18/dont-trust-the-internet-and-how-to-add-an-inductive-proximity-sensor-to-your-3d-printer-the-proper-and-easiest-way/
 
 https://3dprint.wiki/reprap/anet/a8/improvement/autobedleveling
 
@@ -27,7 +27,7 @@ M48 P10 X100 Y100
 Measuring your heat bed flatness
 With the 
 G29 T P10 V4
- your printer will scan your heatbed in a 10��10 point matrix.
+ your printer will scan your heatbed in a 10¡Á10 point matrix.
 
 
 
@@ -149,11 +149,37 @@ should be :
 pin 5 > 17
 instead you have
 pin 5 > 23 which is wrong
-Actually it��s pin 3 > 17 and not pin 5
+Actually it¡¯s pin 3 > 17 and not pin 5
 
 #define ST7920_DELAY_1 DELAY_1_NOP
 #define ST7920_DELAY_2 DELAY_2_NOP
 #define ST7920_DELAY_3 DELAY_1_NOP
+
+Blue ST9720 LCD
+1  VSS  电源地 GND
+2  VDD  电源正极（＋5V）
+4  RS=CS D16
+5  RW=Data D27
+6  E=CLK D17
+19  BLA  背光源正极  
+20  BLK  背光源负极　
+
+Buzzer D37
+Rotarory Switch D35
+
+Reset Button D41
+
+Rotarory - D31
+Rotarory + D33
+
+SD
+MISO(D0) D50
+SCK D52
+MOSI(CMD) D51
+SD-DET D49
+CS (not used) D53
+
+
 
 24V ramps
 http://www.mythoughtspot.com/2017/09/18/modify-ramps-for-24-volts/
@@ -165,3 +191,4 @@ https://www.instructables.com/id/Upgrading-Your-RAMPS-With-High-Power-Components
 
 TMC2208
 https://www.instructables.com/id/UART-This-Serial-Control-of-Stepper-Motors-With-th/
+
