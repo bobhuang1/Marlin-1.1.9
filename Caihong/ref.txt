@@ -159,8 +159,8 @@ Blue ST9720 LCD
 1  VSS  电源地 GND
 2  VDD  电源正极（＋5V）
 4  RS=CS D16
-5  RW=Data D27
-6  E=CLK D17
+5  RW=Data D17
+6  E=CLK D23
 19  BLA  背光源正极  
 20  BLK  背光源负极　
 
