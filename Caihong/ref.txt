@@ -192,3 +192,30 @@ https://www.instructables.com/id/Upgrading-Your-RAMPS-With-High-Power-Components
 TMC2208
 https://www.instructables.com/id/UART-This-Serial-Control-of-Stepper-Motors-With-th/
 
+
+24V Power Vref for Drivers
+
+All settings are based on 24V input
+
+These numbers are approximations for 1.7Amp stepper motors. Use the link above to calculate your own Vref
+
+These settings are for standalone drivers – uart and SPI N/A
+
+Causion: For GND use GND on some other place than the driver – like the GND on the PSU Power-In or similar
+
+On XY:
+A4988: 0.8-1.2 V – Not tested
+DRV8825: 0.7-0.8 V
+TMC2208: 1.1-1.3 V
+
+On Z
+A4988: 0.4-0.5 V
+DRV8825 : 0.3-0.4 V
+TMC2208: N/A – Not tested
+The reason for setting vref so low on the Z is to have a failsafe if you should crash your bed high or low as the driver will stop and hopefully you don’t crash to hard and break stuff 🙂
+
+On E
+A4988: 0.8-1.2 V
+DRV8825 : 0.7-0.8 V
+TMC2208: N/A – Not tested
+
